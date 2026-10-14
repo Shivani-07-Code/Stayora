@@ -69,7 +69,7 @@ app.get("/listings/new", wrapAsync(async (req, res) => {
 //Show Route
 app.get("/listings/:id", wrapAsync(async (req, res) => {
     let { id } = req.params;
-    const listingData = await listing.findById(id);
+    const listingData = await listing.findById(id).populate("reviews");
     res.render("listings/show.ejs", { listing: listingData });
 }));
 
@@ -113,7 +113,7 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
 //POST Route
 app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res) => {
         let listingData = await listing.findById(req.params.id);
-        let newReview = new Review(req.body.reviews);
+        let newReview = new Review(req.body.review);
 
         listingData.reviews.push(newReview);
 
