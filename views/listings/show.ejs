@@ -51,14 +51,15 @@
     <hr>
     
     <p><b>All Reviews</b></p>
-
-        <% for (let rev of listing.reviews) { %>
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Amit Shah</h4>
-                <p class="card-text"><%= rev.comment %></p>
-                <p class="card-text"><%= rev.rating %></p>
+        <div class="row">
+            <% for (let rev of listing.reviews) { %>
+            <div class="card col-5 ms-3 mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Amit Shah</h4>
+                    <p class="card-text"><%= rev.comment %></p>
+                    <p class="card-text"><%= rev.rating %></p>
+                </div>
             </div>
-        </div>
         <% } %>
+        </div> 
 </div>
