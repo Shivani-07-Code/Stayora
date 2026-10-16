@@ -5,7 +5,11 @@
     </div>
 
     <div class="card col-6 offset-3 show-card listing-card">
-        <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
+        <img 
+        src="<%= listing.image.url %>" 
+        class="card-img-top show-img" 
+        alt="listing_image"
+        >
         <div class="card-body">
             <p class="card-text">
             <%= listing.description %><br/>
@@ -19,7 +23,10 @@
     <br/>
 </div>
 <div class="btns">
-    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn" >Edit</a>
+    <a 
+    href="/listings/<%= listing._id %>/edit" 
+    class="btn btn-dark col-1 offset-3 edit-btn" 
+    >Edit</a>
 
     <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
         <button class="btn btn-dark offset-5">Delete</button>
@@ -29,10 +36,22 @@
 <div class="col-8 offset-3 mb-3">
     <hr>
     <h4>Leave a Review</h4>
-    <form action="/listings/<%= listing._id %>/reviews" method="POST" novalidate class="needs-validation">
+    <form 
+    action="/listings/<%= listing._id %>/reviews" 
+    method="POST" 
+    novalidate 
+    class="needs-validation"
+    >
         <div class="mb-3 mt-3">
             <label for="rating" class="form-label">Rating</label>
-            <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range">
+            <input 
+            type="range" 
+            min="1" 
+            max="5" 
+            id="rating" 
+            name="review[rating]" 
+            class="form-range"
+            >
         </div>
         <div class="mb-3 mt-3">
             <label for="comment" class="form-label">Comment</label>
@@ -58,7 +77,11 @@
                     <h4 class="card-title">Amit Shah</h4>
                     <p class="card-text"><%= rev.comment %></p>
                     <p class="card-text"><%= rev.rating %> Star</p>
-                    <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE">
+                    <form 
+                    class="mb-3" 
+                    method="POST" 
+                    action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE"
+                    >
                         <button class="btn btn-sm btn-dark">Delete</button>
                     </form>
                 </div>
