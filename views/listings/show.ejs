@@ -58,7 +58,7 @@
                     <h4 class="card-title">Amit Shah</h4>
                     <p class="card-text"><%= rev.comment %></p>
                     <p class="card-text"><%= rev.rating %> Star</p>
-                    <form class="mb-3" method="POST" action="/listings//<%= listing._id %>/reviews/<%= review._id %>">
+                    <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE">
                         <button class="btn btn-sm btn-dark">Delete</button>
                     </form>
                 </div>
